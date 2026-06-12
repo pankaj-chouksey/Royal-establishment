@@ -1,0 +1,17 @@
+# Database credentials
+includes/config.php
+database/connection.php
+
+# Uploads (large binary files)
+uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

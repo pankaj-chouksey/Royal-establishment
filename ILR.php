@@ -1,0 +1,1 @@
+<?php include "product/product-list-template.php"; ?>
