@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /* ─────────────────────────────────────────────
    HOSPITAL FURNITURE SECTION
 ───────────────────────────────────────────── */
@@ -70,14 +70,17 @@ $_hf_total = count($_hf_rows);
                         <div class="hf-img">
                             <img src="<?= $img ?>" alt="<?= $name ?>" loading="lazy"
                                  onerror="this.src='<?= BASE_URL ?>Images/no-image.png'">
-                            <?php if($cat): ?>
-                            <span class="hf-tag"><?= $cat ?></span>
-                            <?php endif; ?>
                         </div>
                         <div class="hf-body">
                             <h3 class="hf-name"><?= $name ?></h3>
-                            <p  class="hf-desc"><?= $desc ?>...</p>
-                            <span class="hf-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                            <?php if($cat): ?>
+                            <p class="hf-cat-label"><?= $cat ?></p>
+                            <?php endif; ?>
+                            <p class="hf-desc"><?= $desc ?>...</p>
+                            <div class="hf-btns">
+                                <span class="hf-btn-secondary">Enquire</span>
+                                <span class="hf-btn-primary">View Details</span>
+                            </div>
                         </div>
                     </a>
                     <?php endforeach; ?>
@@ -199,12 +202,11 @@ $_hf_total = count($_hf_rows);
 /* ─── Card ───────────────────────────────── */
 .hf-card {
     flex-shrink: 0;
-    /* 3 cards fully visible + ~half of 4th peeking */
     width: calc((100vw - 220px - 40px - 40px - 80px) / 3.4);
     min-width: 200px;
-    max-width: 280px;
+    max-width: 290px;
     background: #fff;
-    border-radius: 18px;
+    border-radius: 20px;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
@@ -212,21 +214,23 @@ $_hf_total = count($_hf_rows);
     flex-direction: column;
     box-shadow: 0 2px 16px rgba(0,0,0,.07);
     transition: transform .28s ease, box-shadow .28s ease;
+    padding: 12px 12px 16px;
 }
 
 .hf-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 44px rgba(0,0,0,.12);
+    box-shadow: 0 20px 44px rgba(0,0,0,.13);
 }
 
-/* ─── Image ─ */
 .hf-img {
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
-    background: #ebebeb;
+    background: #e8e8e8;
     overflow: hidden;
     flex-shrink: 0;
+    border-radius: 14px;
+    margin-bottom: 14px;
 }
 
 .hf-img img {
@@ -240,11 +244,10 @@ $_hf_total = count($_hf_rows);
 
 .hf-card:hover .hf-img img { transform: scale(1.05); }
 
-/* category pill */
 .hf-tag {
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 10px;
+    left: 10px;
     background: rgba(255,255,255,.9);
     color: #222;
     font-size: 9.5px;
@@ -255,59 +258,95 @@ $_hf_total = count($_hf_rows);
     border-radius: 50px;
     backdrop-filter: blur(6px);
     white-space: nowrap;
-    max-width: calc(100% - 24px);
+    max-width: calc(100% - 20px);
     overflow: hidden;
     text-overflow: ellipsis;
     box-shadow: 0 1px 4px rgba(0,0,0,.08);
 }
 
-/* ─── Body — compact, below image ─────────── */
 .hf-body {
-    padding: 14px 16px 16px;
+    padding: 0 4px 4px;
     display: flex;
     flex-direction: column;
     flex: 1;
-    min-height: 0;
 }
 
 .hf-name {
-    font-size: 13.5px;
+    font-size: 15px;
     font-weight: 700;
     color: #111;
-    line-height: 1.35;
-    margin-bottom: 6px;
+    line-height: 1.3;
+    margin-bottom: 3px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    min-height: 36px;
+}
+
+.hf-cat-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    margin-bottom: 10px;
 }
 
 .hf-desc {
-    font-size: 11.5px;
-    color: #888;
+    font-size: 12px;
+    color: #999;
     line-height: 1.6;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     flex: 1;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
-.hf-link {
+.hf-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.hf-btn-secondary {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    height: 34px;
+    padding: 0 14px;
+    background: #e8e8e8;
+    color: #333;
+    border-radius: 50px;
     font-size: 11.5px;
-    font-weight: 700;
-    color: #57B847;
-    letter-spacing: .1px;
-    transition: gap .2s;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    transition: background .2s;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 
-.hf-card:hover .hf-link { gap: 8px; }
-.hf-link i { font-size: 10px; }
+.hf-btn-secondary:hover { background: #d0d0d0; color: #111; }
+
+.hf-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    padding: 0 14px;
+    background: #222;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 11.5px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    transition: background .2s;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hf-btn-primary:hover { background: #57B847; color: #fff; }
 
 /* ─── Nav arrows — bottom-right ─────────── */
 .hf-nav {

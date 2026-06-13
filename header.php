@@ -95,7 +95,7 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-body{ background:#fff; }
+body{ background:#e8e8e8; }
 
 /* =========================
 ADMIN PAGE
@@ -143,22 +143,22 @@ header.scrolled{
     justify-content:space-between;
     gap:24px;
     width:100%;
-    height:72px;
+    height:80px;
     transition: height .3s ease;
 }
 
 header.scrolled .navbar{
-    height:60px;
+    height:72px;
 }
 
 .logo{ flex-shrink:0; }
 .logo img{
-    height:52px;
+    height:80px;
     display:block;
     transition: height .3s ease;
 }
 
-header.scrolled .logo img{ height:42px; }
+header.scrolled .logo img{ height:64px; }
 
 /* =========================
 NAV LINKS  (centre)
@@ -837,7 +837,7 @@ TABLET / MOBILE MEGA MENU
 <!-- LOGO -->
 <div class="logo">
     <a href="<?= BASE_URL ?>index.php">
-        <img src="<?= BASE_URL ?>Images/logo.png" alt="Royal Establishment">
+        <img src="<?= BASE_URL ?>Images/logofinal.jpeg" alt="Royal Establishment">
     </a>
 </div>
 

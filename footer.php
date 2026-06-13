@@ -4,7 +4,7 @@
 /* ── Footer ── */
 .footer {
     background: #1a1a1a;
-    padding: 64px 40px 0;
+    padding: 32px 40px 0;
     margin-top: 0;
 }
 
@@ -12,38 +12,36 @@
 .footer-container {
     display: grid;
     grid-template-columns: 1.6fr 1fr 1fr 1fr;
-    gap: 48px;
-    padding-bottom: 56px;
+    gap: 40px;
+    padding-bottom: 24px;
     border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 /* ── Brand column ── */
 .footer-logo img {
-    height: 56px;
-    margin-bottom: 20px;
+    height: 64px;
+    margin-bottom: 12px;
     display: block;
-    /* invert logo so it shows on dark bg */
-    filter: brightness(0) invert(1);
 }
 
 .footer-about p {
-    font-size: 13.5px;
-    line-height: 1.8;
+    font-size: 12.5px;
+    line-height: 1.7;
     color: #aaa;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
     max-width: 300px;
 }
 
 /* Social icons */
 .footer-social {
     display: flex;
-    gap: 10px;
-    margin-bottom: 28px;
+    gap: 8px;
+    margin-bottom: 16px;
 }
 
 .footer-social a {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     border: 1px solid rgba(255,255,255,.15);
     background: transparent;
@@ -51,7 +49,7 @@
     align-items: center;
     justify-content: center;
     color: #aaa;
-    font-size: 14px;
+    font-size: 12px;
     text-decoration: none;
     transition: background .2s, color .2s, border-color .2s, transform .2s;
 }
@@ -67,14 +65,14 @@
 .footer-catalog {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    height: 42px;
-    padding: 0 20px;
+    gap: 8px;
+    height: 36px;
+    padding: 0 16px;
     background: #57B847;
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     transition: background .2s, transform .2s;
 }
@@ -85,16 +83,56 @@
     transform: translateY(-2px);
 }
 
-.footer-catalog i { font-size: 14px; }
+.footer-catalog i { font-size: 13px; }
+
+/* ── Store circle ── */
+.footer-store-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.footer-store-circle img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,.15);
+    transition: border-color .25s, transform .25s, box-shadow .25s;
+    background: #2a2a2a;
+}
+
+.footer-store-circle:hover img {
+    border-color: #57B847;
+    transform: scale(1.06);
+    box-shadow: 0 0 0 4px rgba(87,184,71,.2);
+}
+
+.footer-store-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #777;
+    transition: color .2s;
+}
+
+.footer-store-circle:hover .footer-store-label {
+    color: #57B847;
+}
 
 /* ── Column titles ── */
 .footer-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     color: #fff;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 /* ── Links ── */
@@ -104,13 +142,13 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 9px;
 }
 
 .footer-links li a {
     text-decoration: none;
     color: #999;
-    font-size: 14px;
+    font-size: 13px;
     transition: color .2s, padding-left .2s;
 }
 
@@ -126,21 +164,21 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 11px;
 }
 
 .footer-contact li {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    font-size: 14px;
+    gap: 10px;
+    font-size: 13px;
     color: #999;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .footer-contact i {
     color: #57B847;
-    font-size: 15px;
+    font-size: 13px;
     margin-top: 2px;
     flex-shrink: 0;
 }
@@ -155,7 +193,7 @@
 
 /* ── Bottom bar ── */
 .footer-bottom {
-    padding: 22px 0;
+    padding: 16px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -164,19 +202,19 @@
 }
 
 .footer-bottom p {
-    font-size: 13px;
+    font-size: 12px;
     color: #666;
 }
 
 .footer-bottom-links {
     display: flex;
-    gap: 24px;
+    gap: 20px;
 }
 
 .footer-bottom-links a {
     text-decoration: none;
     color: #666;
-    font-size: 13px;
+    font-size: 12px;
     transition: color .2s;
 }
 
@@ -184,13 +222,13 @@
 
 /* ── Responsive ── */
 @media (max-width: 1100px) {
-    .footer-container { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .footer-container { grid-template-columns: 1fr 1fr; gap: 28px; }
 }
 
 @media (max-width: 768px) {
-    .footer { padding: 48px 20px 0; }
-    .footer-container { grid-template-columns: 1fr; gap: 32px; }
-    .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+    .footer { padding: 28px 20px 0; }
+    .footer-container { grid-template-columns: 1fr; gap: 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
     .footer-bottom-links { justify-content: center; }
 }
 </style>
@@ -202,7 +240,7 @@
         <!-- ── Brand ── -->
         <div class="footer-about">
             <div class="footer-logo">
-                <img src="<?= BASE_URL ?>Images/logo.png" alt="Royal Establishment">
+                <img src="<?= BASE_URL ?>Images/logofinal.jpeg" alt="Royal Establishment">
             </div>
             <p>Royal Establishment is a trusted supplier of premium hospital furniture and medical equipment, delivering high-quality healthcare infrastructure solutions with reliability and excellence.</p>
 
@@ -248,6 +286,14 @@
 
         <!-- ── Contact ── -->
         <div>
+            <!-- Clickable product image circle — links to store -->
+            <a href="<?= BASE_URL ?>store.php" class="footer-store-circle" aria-label="Visit our store">
+                <img src="<?= BASE_URL ?>Images/icu.png"
+                     alt="Our Products"
+                     onerror="this.src='<?= BASE_URL ?>Images/logo.png'">
+                <span class="footer-store-label">Visit Store</span>
+            </a>
+
             <h3 class="footer-title">Contact</h3>
             <ul class="footer-contact">
                 <li>

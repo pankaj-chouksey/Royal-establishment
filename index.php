@@ -21,7 +21,7 @@
 }
 
 body{
-    background: #f4f7fa;
+    background: #e8e8e8;
     color: #111;
     overflow-x: hidden;
      min-height: 100vh;
@@ -414,100 +414,6 @@ TRUSTED PARTNERS & CLIENTS
 }
 
 /* =========================
-STATS / ANALYTICS SECTION
-========================= */
-.royal-counter-section {
-    background: #e8e8e8;
-    padding: 0 40px 60px;
-}
-
-.royal-counter-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-}
-
-.royal-counter-card {
-    background: #fff;
-    border-radius: 18px;
-    padding: 36px 24px 32px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,.06);
-    transition: transform .25s, box-shadow .25s;
-    position: relative;
-    overflow: hidden;
-}
-
-.royal-counter-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: #57B847;
-    border-radius: 18px 18px 0 0;
-    transform: scaleX(0);
-    transition: transform .3s ease;
-    transform-origin: left;
-}
-
-.royal-counter-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(0,0,0,.10);
-}
-
-.royal-counter-card:hover::before {
-    transform: scaleX(1);
-}
-
-.royal-counter-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: #f0faf0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: #57B847;
-    margin-bottom: 4px;
-}
-
-.royal-counter-number {
-    font-size: 44px;
-    font-weight: 800;
-    color: #111;
-    letter-spacing: -2px;
-    line-height: 1;
-}
-
-.royal-counter-number .counter-suffix {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.royal-counter-label {
-    font-size: 13.5px;
-    font-weight: 500;
-    color: #777;
-    letter-spacing: 0.1px;
-}
-
-@media (max-width: 900px) {
-    .royal-counter-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 480px) {
-    .royal-counter-section { padding: 0 20px 44px; }
-    .royal-counter-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .royal-counter-card { padding: 24px 18px; }
-    .royal-counter-number { font-size: 34px; }
-}
-
-/* =========================
 GET IN TOUCH SECTION
 ========================= */
 .git-section {
@@ -636,7 +542,6 @@ GET IN TOUCH SECTION
 /* Phone row â€” flag + code + number */
 .git-phone-row {
     display: flex;
-    gap: 10px;
     align-items: flex-end;
     border-bottom: 1.5px solid #999;
     transition: border-color .2s;
@@ -649,15 +554,20 @@ GET IN TOUCH SECTION
 .git-phone-row select {
     border: none;
     border-bottom: none;
-    width: 90px;
+    border-right: 1.5px solid #ccc;
+    width: 105px;
     flex-shrink: 0;
-    padding: 10px 0;
-    font-size: 14px;
+    padding: 10px 8px 10px 0;
+    font-size: 13px;
+    font-weight: 600;
     color: #111;
     background: transparent;
     font-family: 'Poppins', sans-serif;
     outline: none;
     cursor: pointer;
+    margin-right: 12px;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .git-phone-row input {
@@ -668,7 +578,11 @@ GET IN TOUCH SECTION
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     color: #111;
+    background: transparent;
+    outline: none;
 }
+
+.git-phone-row input::placeholder { color: #777; }
 
 .git-phone-row input:focus,
 .git-phone-row select:focus {
@@ -744,7 +658,6 @@ RESPONSIVE
     .philosophy-section,
     .services-section,
     .partners-section,
-    .royal-counter-section,
     .git-section {
         padding-left: 20px;
         padding-right: 20px;
@@ -1130,37 +1043,6 @@ RESPONSIVE
 
 </section>
 
-<!-- STATS / ANALYTICS SECTION -->
-<section class="royal-counter-section">
-    <div class="royal-counter-grid animate-fade">
-
-        <div class="royal-counter-card">
-            <div class="royal-counter-icon"><i class="fa-solid fa-calendar-check"></i></div>
-            <div class="royal-counter-number" data-target="15">0<span class="counter-suffix">+</span></div>
-            <div class="royal-counter-label">Years Experience</div>
-        </div>
-
-        <div class="royal-counter-card">
-            <div class="royal-counter-icon"><i class="fa-solid fa-box-open"></i></div>
-            <div class="royal-counter-number" data-target="500">0<span class="counter-suffix">+</span></div>
-            <div class="royal-counter-label">Medical Products</div>
-        </div>
-
-        <div class="royal-counter-card">
-            <div class="royal-counter-icon"><i class="fa-solid fa-hospital-user"></i></div>
-            <div class="royal-counter-number" data-target="100">0<span class="counter-suffix">+</span></div>
-            <div class="royal-counter-label">Trusted Clients</div>
-        </div>
-
-        <div class="royal-counter-card">
-            <div class="royal-counter-icon"><i class="fa-solid fa-headset"></i></div>
-            <div class="royal-counter-number">24<span class="counter-suffix">/7</span></div>
-            <div class="royal-counter-label">Technical Support</div>
-        </div>
-
-    </div>
-</section>
-
 <!-- GET IN TOUCH SECTION -->
 <section class="git-section" id="contact">
     <div class="git-inner">
@@ -1208,24 +1090,23 @@ RESPONSIVE
                     <label>Phone Number</label>
                     <div class="git-phone-row">
                         <select name="country_code" aria-label="Country code">
-                            <option value="+91">ðŸ‡®ðŸ‡³ +91</option>
-                            <option value="+1">ðŸ‡ºðŸ‡¸ +1</option>
-                            <option value="+44">ðŸ‡¬ðŸ‡§ +44</option>
-                            <option value="+971">ðŸ‡¦ðŸ‡ª +971</option>
-                            <option value="+966">ðŸ‡¸ðŸ‡¦ +966</option>
-                            <option value="+252">ðŸ‡¸ðŸ‡´ +252</option>
-                            <option value="+33">ðŸ‡«ðŸ‡· +33</option>
-                            <option value="+49">ðŸ‡©ðŸ‡ª +49</option>
-                            <option value="+61">ðŸ‡¦ðŸ‡º +61</option>
+                            <option value="+91">IN +91</option>
+                            <option value="+1">US +1</option>
+                            <option value="+44">UK +44</option>
+                            <option value="+971">AE +971</option>
+                            <option value="+966">SA +966</option>
+                            <option value="+252">SO +252</option>
+                            <option value="+33">FR +33</option>
+                            <option value="+49">DE +49</option>
+                            <option value="+61">AU +61</option>
+                            <option value="+92">PK +92</option>
+                            <option value="+880">BD +880</option>
+                            <option value="+60">MY +60</option>
+                            <option value="+65">SG +65</option>
                         </select>
-                        <input type="tel" name="phone" placeholder="Phone number" required>
+                        <input type="tel" name="phone" placeholder="Phone number" required
+                               pattern="[0-9]{7,15}" title="Enter 7-15 digit phone number">
                     </div>
-                </div>
-
-                <!-- Facility -->
-                <div class="git-field">
-                    <label for="git_facility">Hospital / Facility</label>
-                    <input type="text" id="git_facility" name="facility" placeholder="Hospital or facility name" required>
                 </div>
 
                 <!-- Description (optional) -->
